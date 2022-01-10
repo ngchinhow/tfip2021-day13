@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Address Book</title>
+    <link rel="stylesheet" th:href="@{/styles/index.css}">
+</head>
+<body>
+    <h1>Fill in the details of your address book:</h1>
+    <form action="#" th:action="@{/contact}" th:object="${contact}" method="post">
+        <section>
+            <div style="float:left;margin-right:20px;">
+                <label for="name">Name</label>
+                <input type="text" th:field="*{name}" id="name"/>
+            </div>
+            <div style="float:left;margin-right:20px;">
+                <label for="email">Email</label>
+                <input type="text" th:field="*{email}" id="email"/>
+            </div>
+            <div style="float:left;">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" th:field="*{phoneNumber}" id="phoneNumber"/>
+            </div>
+        </section>
+        <br style="clear:both;" />
+        <section>
+            <div style="margin-top:15px;">
+                <input type="submit" value="Submit"/>
+            </div>
+        </section>
+    </form>
+</body>
+</html>
